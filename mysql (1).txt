@@ -1,0 +1,62 @@
+--創立資料庫
+create database list;
+
+--建立資料表
+create table mylist
+( id int auto_increment primary key,
+  product varchar(10),
+  money int,
+  day datetime not null,
+);
+
+--輸入資料
+insert mylist
+(   id,
+    product,
+    money,
+    day
+)
+values
+(   1,
+    '電影票',
+    168,
+    '2016-05-07'
+);
+
+--輸入資料
+insert mylist
+(   id,
+    product
+    money  
+    day
+)
+values
+(   2
+    '牛奶',
+    249,
+    2016-06-29
+);
+
+--查詢
+select * from mylist;
+
+--查詢金額由大到小排序
+select * from mylist orders by money desc
+
+--新增欄位
+alter table mylist add amount int default 2
+
+--刪除欄位
+alter table mylist drop colum day;
+
+--刪除指定欄位
+delete orders where money = 168;
+
+--修改
+update mylist 
+    set product = products
+        money = 250
+    where id = 1;
+--刪除整筆資料
+delete from mylist where id = 1
+    
